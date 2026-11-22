@@ -1,0 +1,34 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>SHELBY ROOM</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <noscript>This chat needs JavaScript turned on.</noscript>
+
+  <div id="app">
+    <header>
+      <b class="brand">SHELBY ROOM</b>
+      <div>
+        <span id="who"></span>
+        <button id="logout" type="button">Log out</button>
+      </div>
+    </header>
+
+    <div id="status" role="status"></div>
+    <div id="members" aria-label="People online now"></div>
+    <div id="msgs" role="log" aria-live="polite" aria-label="Messages"></div>
+
+    <form id="form">
+      <label for="text" class="sr-only">Message</label>
+      <input id="text" autocomplete="off" maxlength="500" placeholder="Type a message…">
+      <button type="submit">Send</button>
+    </form>
+  </div>
+
+  <script src="chat.js"></script>
+</body>
+</html>

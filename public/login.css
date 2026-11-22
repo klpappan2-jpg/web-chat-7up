@@ -1,0 +1,116 @@
+/* login.css — pixel-art retro login. Self-contained (the chat page still uses style.css). */
+:root {
+  --navy: #14213d; --yellow: #ffe600; --green: #3fcf4f; --red: #e4002b;
+  --px: "Press Start 2P", "Courier New", monospace;
+  --ui: "Pixelify Sans", "Courier New", monospace;
+}
+* { box-sizing: border-box; }
+html, body { margin: 0; }
+body {
+  min-height: 100vh; min-height: 100dvh;
+  background: #4fc3f7; color: var(--navy);
+  font: 500 18px/1.3 var(--ui); overflow-x: hidden;
+}
+
+/* ---------- pixel scene ---------- */
+.scene {
+  position: fixed; inset: 0; z-index: 0; overflow: hidden; pointer-events: none;
+  background: linear-gradient(#4fc3f7 0 50%, #4cc24f 50%);
+}
+.pixel { position: absolute; inset: 0; width: 100%; height: 100%; image-rendering: pixelated; }
+.cloud { animation: drift 90s steps(300) infinite; }
+.c1 { animation-delay: -10s; } .c2 { animation-delay: -45s; animation-duration: 120s; }
+.c3 { animation-delay: -70s; animation-duration: 100s; } .c4 { animation-delay: -30s; animation-duration: 140s; }
+@keyframes drift { from { transform: translateX(-50px); } to { transform: translateX(250px); } }
+.bob1 { animation: bob 1.2s steps(1) infinite; }
+.bob2 { animation: bob 1.5s steps(1) infinite .4s; }
+.bob3 { animation: bob 1.8s steps(1) infinite .8s; }
+@keyframes bob { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-1px); } }
+@media (prefers-reduced-motion: reduce) { .cloud, .bob1, .bob2, .bob3 { animation: none; } }
+
+/* ---------- layout ---------- */
+.stage {
+  position: relative; z-index: 2;
+  min-height: 100vh; min-height: 100dvh;
+  display: grid; align-items: center; justify-items: end;
+  padding: 40px clamp(20px, 9vw, 150px) 72px;
+}
+.win-wrap { width: min(100%, 410px); filter: drop-shadow(6px 6px 0 rgba(20, 33, 61, .45)); }
+
+/* ---------- Habbo-style window ---------- */
+.win {
+  background: #dcecf8; border: 4px solid var(--navy);
+  box-shadow: inset 0 0 0 3px #fff;
+  clip-path: polygon(0 4px, 4px 4px, 4px 0, calc(100% - 4px) 0, calc(100% - 4px) 4px, 100% 4px,
+                     100% calc(100% - 4px), calc(100% - 4px) calc(100% - 4px), calc(100% - 4px) 100%,
+                     4px 100%, 4px calc(100% - 4px), 0 calc(100% - 4px));
+}
+.title-bar {
+  display: flex; align-items: center; justify-content: space-between; gap: 10px;
+  padding: 12px 14px; border-bottom: 4px solid var(--navy);
+  background: linear-gradient(#52b0ee 0 50%, #2f86c9 50%);
+}
+h1 { margin: 0; font: 400 16px/1.2 var(--px); color: #fff; text-shadow: 2px 2px 0 var(--navy); }
+.badge {
+  padding: 5px 6px; background: var(--red); color: #fff; border: 2px solid var(--navy);
+  font: 400 8px/1 var(--px); white-space: nowrap;
+}
+.win-body { padding: 18px 20px 22px; }
+.tag { margin: 0 0 16px; font: 600 20px/1.2 var(--ui); text-align: center; text-wrap: balance; }
+
+.tabs { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
+.tabs button {
+  min-height: 44px; padding: 8px; cursor: pointer; color: var(--navy);
+  background: #a9c8e6; border: 3px solid var(--navy); box-shadow: inset 0 -4px 0 #7ea6cc;
+  font: 400 10px/1.2 var(--px); text-transform: uppercase;
+}
+.tabs button.on { background: var(--yellow); box-shadow: inset 0 -4px 0 #e0b800; }
+.tabs button:active { transform: translateY(2px); }
+
+label { display: block; margin: 16px 0 6px; font: 400 8px/1.2 var(--px); text-transform: uppercase; }
+input {
+  width: 100%; min-height: 48px; padding: 8px 12px; color: var(--navy); background: #fff;
+  border: 3px solid var(--navy); border-radius: 0; box-shadow: inset 3px 3px 0 #c5d8ea;
+  font: 600 20px var(--ui);
+}
+input:focus { outline: 3px solid var(--yellow); outline-offset: 0; }
+
+#go {
+  width: 100%; min-height: 56px; margin-top: 22px; cursor: pointer; color: #fff;
+  background: var(--green); border: 3px solid var(--navy); border-radius: 0;
+  box-shadow: inset -4px -4px 0 #25a336, inset 4px 4px 0 #92f29a, 0 4px 0 var(--navy);
+  font: 400 12px/1.2 var(--px); text-transform: uppercase; text-shadow: 2px 2px 0 var(--navy);
+}
+#go:hover { filter: brightness(1.1); }
+#go:active { transform: translateY(3px); box-shadow: inset -4px -4px 0 #25a336, inset 4px 4px 0 #92f29a, 0 1px 0 var(--navy); }
+#go:disabled { opacity: .6; cursor: wait; }
+#msg { min-height: 24px; margin: 14px 0 0; text-align: center; font: 700 18px/1.2 var(--ui); color: #c1121f; }
+
+/* ---------- watermark ---------- */
+.wm {
+  position: fixed; left: 50%; bottom: max(10px, env(safe-area-inset-bottom)); z-index: 6;
+  transform: translateX(-50%); white-space: nowrap; pointer-events: none; user-select: none;
+  padding: 7px 12px; background: var(--navy); color: var(--yellow); border: 3px solid #fff;
+  box-shadow: 3px 3px 0 rgba(0, 0, 0, .35); font: 400 9px/1 var(--px);
+}
+
+/* ---------- phones and tall screens: scene on top, window below ---------- */
+@media (max-aspect-ratio: 5/6), (max-width: 700px) {
+  .pixel { inset: auto; top: 0; left: 50%; height: 50vh; width: calc(50vh * 16 / 9); transform: translateX(-40.625%); }
+  .stage { justify-items: center; align-items: start; padding: calc(40vh + 8px) 16px 72px; }
+  .win-wrap { width: min(100%, 440px); }
+}
+@media (max-width: 400px) {
+  h1 { font-size: 14px; }
+  .win-body { padding: 16px 16px 20px; }
+}
+
+/* ---------- short landscape phones ---------- */
+@media (max-height: 560px) {
+  .wm { left: 12px; transform: none; bottom: 8px; }
+  .stage { align-items: start; padding: 16px 16px 56px; }
+  .win-wrap { width: min(100%, 380px); }
+  .tag { margin-bottom: 8px; font-size: 18px; }
+  label { margin-top: 10px; }
+  #go { margin-top: 14px; }
+}

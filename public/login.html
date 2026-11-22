@@ -1,0 +1,188 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#4fc3f7">
+  <title>7up chat</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@400;500;600;700&family=Press+Start+2P&display=swap">
+  <link rel="stylesheet" href="login.css">
+</head>
+<body>
+
+  <!-- pixel-art scene (vector squares, so it stays razor sharp at any size) -->
+  <div class="scene" aria-hidden="true">
+<svg class="pixel" viewBox="0 0 192 108" preserveAspectRatio="xMidYMid slice" shape-rendering="crispEdges" xmlns="http://www.w3.org/2000/svg"><defs><pattern id="g" width="16" height="16" patternUnits="userSpaceOnUse"><rect width="16" height="16" fill="#4cc24f"/><path fill="#3aa63f" d="M3 5h1v2h-1zM10 2h1v2h-1zM12 11h1v2h-1zM6 12h1v2h-1z"/></pattern><g id="cl"><path fill="#fff" d="M6 4h22v6h-22zM10 0h8v4h-8zM18 2h8v2h-8zM2 6h30v4h-30z"/>
+<path fill="#cfe8ff" d="M4 10h26v2h-26z"/></g><g id="wl"><path fill="#14213d" d="M-1 -1h10v10h-10z"/>
+<path fill="#ffe14d" d="M0 0h8v8h-8z"/>
+<path fill="#fff" opacity=".7" d="M1 1h2v2h-2z"/>
+<path fill="#e0b800" d="M0 7h8v1h-8z"/>
+<path fill="#14213d" opacity=".35" d="M3 0h2v8h-2z"/></g><g id="wd"><path fill="#14213d" d="M-1 -1h10v10h-10z"/>
+<path fill="#6fb8ff" d="M0 0h8v8h-8z"/>
+<path fill="#fff" opacity=".7" d="M1 1h2v2h-2z"/>
+<path fill="#4a93d8" d="M0 7h8v1h-8z"/>
+<path fill="#14213d" opacity=".35" d="M3 0h2v8h-2z"/></g><g id="tr"><path fill="#8b5a2b" d="M-1 -10h3v10h-3z"/>
+<path fill="#2fae4a" d="M-5 -25h10v3h-10z"/>
+<path fill="#3cc45a" d="M-8 -22h16v4h-16zM-10 -18h20v7h-20z"/>
+<path fill="#1f8a3a" d="M-8 -11h16v3h-16z"/>
+<path fill="#7ee08f" d="M-6 -21h3v2h-3z"/>
+<path fill="#2fae4a" d="M2 -15h6v4h-6z"/></g></defs>
+<path fill="#4fc3f7" d="M0 0h192v12h-192z"/>
+<path fill="#68cdfa" d="M0 12h192v12h-192z"/>
+<path fill="#82d7fc" d="M0 24h192v12h-192z"/>
+<path fill="#9be1fd" d="M0 36h192v12h-192z"/>
+<path fill="#b5ebfe" d="M0 48h192v12h-192z"/>
+<path fill="#cff4ff" d="M0 60h192v12h-192z"/>
+<path fill="#ffe58a" d="M106 4h1v1h-1zM101 5h11v1h-11zM99 6h15v1h-15zM98 7h17v1h-17zM97 8h19v1h-19zM96 9h21v1h-21zM96 10h21v1h-21zM95 11h23v1h-23zM95 12h23v1h-23zM94 13h25v1h-25zM94 14h25v1h-25zM94 15h25v1h-25zM94 16h25v1h-25zM94 17h25v1h-25zM94 18h25v1h-25zM94 19h25v1h-25zM95 20h23v1h-23zM95 21h23v1h-23zM96 22h21v1h-21zM96 23h21v1h-21zM97 24h19v1h-19zM98 25h17v1h-17zM99 26h15v1h-15zM101 27h11v1h-11zM106 28h1v1h-1z"/>
+<path fill="#ffd400" d="M106 7h1v1h-1zM102 8h9v1h-9zM100 9h13v1h-13zM99 10h15v1h-15zM99 11h15v1h-15zM98 12h17v1h-17zM98 13h17v1h-17zM97 14h19v1h-19zM97 15h19v1h-19zM97 16h19v1h-19zM97 17h19v1h-19zM97 18h19v1h-19zM98 19h17v1h-17zM98 20h17v1h-17zM99 21h15v1h-15zM99 22h15v1h-15zM100 23h13v1h-13zM102 24h9v1h-9zM106 25h1v1h-1z"/>
+<path fill="#fff3a6" d="M102 11h4v2h-4z"/>
+<g class="cloud c1"><use href="#cl" y="12"/></g>
+<g class="cloud c2"><use href="#cl" y="30"/></g>
+<g class="cloud c3"><use href="#cl" y="6"/></g>
+<g class="cloud c4"><use href="#cl" y="38"/></g>
+<path fill="#7fdcae" d="M-16 85h52v1h-52zM-14 84h48v1h-48zM-12 83h44v1h-44zM-10 82h40v1h-40zM-8 81h36v1h-36zM-6 80h32v1h-32zM-4 79h28v1h-28zM-2 78h24v1h-24zM0 77h20v1h-20zM2 76h16v1h-16zM4 75h12v1h-12zM6 74h8v1h-8zM38 85h44v1h-44zM40 84h40v1h-40zM42 83h36v1h-36zM44 82h32v1h-32zM46 81h28v1h-28zM48 80h24v1h-24zM50 79h20v1h-20zM52 78h16v1h-16zM54 77h12v1h-12zM102 85h56v1h-56zM104 84h52v1h-52zM106 83h48v1h-48zM108 82h44v1h-44zM110 81h40v1h-40zM112 80h36v1h-36zM114 79h32v1h-32zM116 78h28v1h-28zM118 77h24v1h-24zM120 76h20v1h-20zM122 75h16v1h-16zM124 74h12v1h-12zM152 85h48v1h-48zM154 84h44v1h-44zM156 83h40v1h-40zM158 82h36v1h-36zM160 81h32v1h-32zM162 80h28v1h-28zM164 79h24v1h-24zM166 78h20v1h-20zM168 77h16v1h-16zM170 76h12v1h-12z"/>
+<path fill="#43c08a" d="M10 85h40v1h-40zM12 84h36v1h-36zM14 83h32v1h-32zM16 82h28v1h-28zM18 81h24v1h-24zM20 80h20v1h-20zM22 79h16v1h-16zM24 78h12v1h-12zM80 85h36v1h-36zM82 84h32v1h-32zM84 83h28v1h-28zM86 82h24v1h-24zM88 81h20v1h-20zM90 80h16v1h-16zM92 79h12v1h-12zM128 85h44v1h-44zM130 84h40v1h-40zM132 83h36v1h-36zM134 82h32v1h-32zM136 81h28v1h-28zM138 80h24v1h-24zM140 79h20v1h-20zM142 78h16v1h-16zM144 77h12v1h-12z"/>
+<path fill="url(#g)" d="M0 86h192v22h-192z"/>
+<path fill="#2f9a3a" d="M0 86h192v1h-192z"/>
+<path fill="#f2d58a" d="M70 87h16v2h-16zM68 89h20v3h-20zM66 92h24v16h-24z"/>
+<path fill="#d9b565" d="M70 94h2v1h-2zM80 98h2v1h-2zM74 103h2v1h-2zM84 105h2v1h-2zM68 99h2v1h-2z"/>
+<path fill="#14213d" d="M47 33h62v54h-62z"/>
+<path fill="#1fb85f" d="M48 34h60v52h-60z"/>
+<path fill="#13954a" d="M102 34h6v52h-6z"/>
+<path fill="#5be08f" d="M48 34h60v2h-60z"/>
+<path fill="#14213d" d="M45 30h66v4h-66z"/>
+<path fill="#0f7a3c" d="M46 31h64v2h-64z"/>
+<path fill="#14213d" d="M62 18h32v13h-32z"/>
+<path fill="#e4002b" d="M63 19h30v11h-30z"/>
+<path fill="#ff5a6e" d="M63 19h30v2h-30z"/>
+<path fill="#14213d" d="M68 31h2v2h-2zM86 31h2v2h-2z"/>
+<path fill="#fff" d="M70 21h5v1h-5zM74 22h1v1h-1zM73 23h1v1h-1zM72 24h1v1h-1zM71 25h1v1h-1zM71 26h1v1h-1zM71 27h1v1h-1zM76 21h1v1h-1zM80 21h1v1h-1zM76 22h1v1h-1zM80 22h1v1h-1zM76 23h1v1h-1zM80 23h1v1h-1zM76 24h1v1h-1zM80 24h1v1h-1zM76 25h1v1h-1zM80 25h1v1h-1zM76 26h1v1h-1zM80 26h1v1h-1zM77 27h3v1h-3zM82 21h4v1h-4zM82 22h1v1h-1zM86 22h1v1h-1zM82 23h1v1h-1zM86 23h1v1h-1zM82 24h4v1h-4zM82 25h1v1h-1zM82 26h1v1h-1zM82 27h1v1h-1z"/>
+<use href="#wl" x="54" y="36"/>
+<use href="#wd" x="66" y="36"/>
+<use href="#wl" x="82" y="36"/>
+<use href="#wl" x="94" y="36"/>
+<use href="#wd" x="54" y="46"/>
+<use href="#wl" x="66" y="46"/>
+<use href="#wd" x="82" y="46"/>
+<use href="#wl" x="94" y="46"/>
+<use href="#wl" x="54" y="56"/>
+<use href="#wl" x="66" y="56"/>
+<use href="#wd" x="82" y="56"/>
+<use href="#wd" x="94" y="56"/>
+<use href="#wl" x="54" y="73"/>
+<use href="#wl" x="94" y="73"/>
+<path fill="#14213d" d="M71 70h14v17h-14z"/>
+<path fill="#8a5a33" d="M72 71h12v16h-12z"/>
+<path fill="#b87d4b" d="M72 71h12v3h-12z"/>
+<path fill="#9fd8ff" d="M74 75h3v6h-3zM79 75h3v6h-3z"/>
+<path fill="#ffe600" d="M81 80h1v1h-1z"/>
+<path fill="#14213d" d="M67 65h22v5h-22z"/>
+<path fill="#1fb85f" d="M68 66h2v3h-2z"/>
+<path fill="#fff" d="M70 66h2v3h-2z"/>
+<path fill="#1fb85f" d="M72 66h2v3h-2z"/>
+<path fill="#fff" d="M74 66h2v3h-2z"/>
+<path fill="#1fb85f" d="M76 66h2v3h-2z"/>
+<path fill="#fff" d="M78 66h2v3h-2z"/>
+<path fill="#1fb85f" d="M80 66h2v3h-2z"/>
+<path fill="#fff" d="M82 66h2v3h-2z"/>
+<path fill="#1fb85f" d="M84 66h2v3h-2z"/>
+<path fill="#fff" d="M86 66h2v3h-2z"/>
+<path fill="#0f7a3c" d="M68 69h20v1h-20z"/>
+<path fill="#c9b27a" d="M68 87h20v2h-20z"/>
+<use href="#tr" x="10" y="88"/>
+<use href="#tr" x="26" y="88"/>
+<use href="#tr" x="40" y="88"/>
+<use href="#tr" x="116" y="90"/>
+<path fill="#8b5a2b" d="M126 90h2v1h-2zM126 89h2v1h-2zM126 88h2v1h-2zM126 87h2v1h-2zM126 86h2v1h-2zM127 85h2v1h-2zM127 84h2v1h-2zM127 83h2v1h-2zM127 82h2v1h-2zM127 81h2v1h-2zM128 80h2v1h-2zM128 79h2v1h-2zM128 78h2v1h-2zM128 77h2v1h-2z"/>
+<path fill="#2fae4a" d="M119 74h8v2h-8zM122 72h6v2h-6zM129 72h6v2h-6zM132 74h8v2h-8zM120 77h6v2h-6zM132 77h6v2h-6z"/>
+<path fill="#7ee08f" d="M126 71h5v2h-5z"/>
+<path fill="#ff5aa5" d="M20 96h2v2h-2z"/>
+<path fill="#2f9a3a" d="M20 98h1v2h-1z"/>
+<path fill="#ffe600" d="M44 101h2v2h-2z"/>
+<path fill="#2f9a3a" d="M44 103h1v2h-1z"/>
+<path fill="#ff5aa5" d="M60 104h2v2h-2z"/>
+<path fill="#2f9a3a" d="M60 106h1v2h-1z"/>
+<path fill="#fff" d="M100 98h2v2h-2z"/>
+<path fill="#2f9a3a" d="M100 100h1v2h-1z"/>
+<path fill="#ff9a3c" d="M108 104h2v2h-2z"/>
+<path fill="#2f9a3a" d="M108 106h1v2h-1z"/>
+<path fill="#fff" d="M30 105h2v2h-2z"/>
+<path fill="#2f9a3a" d="M30 107h1v2h-1z"/>
+<path fill="#ffe600" d="M124 100h2v2h-2z"/>
+<path fill="#2f9a3a" d="M124 102h1v2h-1z"/>
+<path fill="#ff5aa5" d="M136 96h2v2h-2z"/>
+<path fill="#2f9a3a" d="M136 98h1v2h-1z"/>
+<g class="bob1">
+<path fill="#14213d" d="M38 92h6v6h-6z"/>
+<path fill="#e4002b" d="M39 93h4v4h-4z"/>
+<path fill="#14213d" d="M39 87h4v5h-4z"/>
+<path fill="#ffcf9f" d="M39 88h4v4h-4z"/>
+<path fill="#5a3a1a" d="M39 88h4v1h-4z"/>
+<path fill="#14213d" d="M40 90h1v1h-1zM42 90h1v1h-1z"/>
+<path fill="#ffcf9f" d="M37 93h1v3h-1zM44 93h1v3h-1z"/>
+<path fill="#24324f" d="M39 98h2v3h-2zM41 98h2v3h-2z"/>
+<path fill="#14213d" d="M39 101h2v1h-2zM41 101h2v1h-2zM34 77h14v8h-14z"/>
+<path fill="#fff" d="M35 78h12v6h-12z"/>
+<path fill="#14213d" d="M39 84h2v2h-2z"/>
+<path fill="#fff" d="M39 83h2v1h-2z"/>
+<path fill="#14213d" d="M37 80h2v2h-2zM40 80h2v2h-2zM43 80h2v2h-2z"/>
+</g>
+<g class="bob2">
+<path fill="#14213d" d="M70 95h6v6h-6z"/>
+<path fill="#ffe600" d="M71 96h4v4h-4z"/>
+<path fill="#14213d" d="M71 90h4v5h-4z"/>
+<path fill="#ffcf9f" d="M71 91h4v4h-4z"/>
+<path fill="#1a1a1a" d="M71 91h4v1h-4z"/>
+<path fill="#14213d" d="M72 93h1v1h-1zM74 93h1v1h-1z"/>
+<path fill="#ffcf9f" d="M69 96h1v3h-1zM76 96h1v3h-1z"/>
+<path fill="#24324f" d="M71 101h2v3h-2zM73 101h2v3h-2z"/>
+<path fill="#14213d" d="M71 104h2v1h-2zM73 104h2v1h-2z"/>
+</g>
+<g class="bob3">
+<path fill="#14213d" d="M18 94h6v6h-6z"/>
+<path fill="#a64dff" d="M19 95h4v4h-4z"/>
+<path fill="#14213d" d="M19 89h4v5h-4z"/>
+<path fill="#ffcf9f" d="M19 90h4v4h-4z"/>
+<path fill="#ffb347" d="M19 90h4v1h-4z"/>
+<path fill="#14213d" d="M20 92h1v1h-1zM22 92h1v1h-1z"/>
+<path fill="#ffcf9f" d="M17 95h1v3h-1zM24 95h1v3h-1z"/>
+<path fill="#24324f" d="M19 100h2v3h-2zM21 100h2v3h-2z"/>
+<path fill="#14213d" d="M19 103h2v1h-2zM21 103h2v1h-2z"/>
+</g></svg>
+  </div>
+
+  <main class="stage">
+    <div class="win-wrap">
+      <section class="win" aria-labelledby="title">
+        <div class="title-bar">
+          <h1 id="title">7up chat</h1>
+          <span class="badge">NO EMAIL!</span>
+        </div>
+
+        <div class="win-body">
+          <p class="tag">Pick a name &amp; password. Pop in!</p>
+
+          <div class="tabs">
+            <button id="tabUp" class="on" type="button">Sign up</button>
+            <button id="tabIn" type="button">Log in</button>
+          </div>
+
+          <label for="name">Name</label>
+          <input id="name" autocomplete="username" maxlength="16">
+
+          <label for="pass">Password</label>
+          <input id="pass" type="password" autocomplete="current-password" maxlength="128">
+
+          <button id="go" type="button">Create account</button>
+          <p id="msg" role="alert"></p>
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <div class="wm">created by Shelby</div>
+  <script src="login.js"></script>
+</body>
+</html>
